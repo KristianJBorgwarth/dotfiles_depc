@@ -26,12 +26,21 @@
         },
         {
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "<#69FF94>❯</>",
+          "foreground": "#ffffff",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "properties": {
             "branch_icon": "",
             "cache_duration": "none",
             "fetch_status": false,
             "fetch_upstream_icon": true
           },
-          "template": "<#5FAAE8>{{.UpstreamIcon}}\ue725(</>{{ .HEAD }}<#5FAAE8>)</>",
+          "template": "<#5FAAE8>(</>{{ .HEAD }}<#5FAAE8>)</>",
           "foreground": "#c73ecc",
           "type": "git",
           "style": "plain"
