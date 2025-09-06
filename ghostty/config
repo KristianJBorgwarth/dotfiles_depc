@@ -1,0 +1,11 @@
+# Run `ghostty +show-config --default --docs` to view a list of config
+
+window-width = 140
+window-height = 40
+background-opacity = 0.75
+
+keybind = ctrl+super+right=goto_split:right
+keybind = ctrl+super+left=goto_split:left
+keybind = alt+r=reload_config
+
+theme = dracula
