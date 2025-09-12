@@ -39,7 +39,8 @@ sleep 0.1
 
 
 # Set wallpaper
-feh --bg-fill ~/Pictures/11356529.jpg &
+feh --no-fehbg --bg-fill ~/Pictures/black.moon.jpg ~/Pictures/black.png
+
 
 # Launch notifications
 dunst &

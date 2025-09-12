@@ -28,6 +28,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# kill app
+super + alt + Delete
+	bspc node -k
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
