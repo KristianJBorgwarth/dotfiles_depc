@@ -1,7 +1,3 @@
-#
-# wm independent hotkeys
-#
-
 # terminal emulator
 super + Return
 	ghostty
@@ -24,16 +20,30 @@ super + shift + b
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-#
-# bspwm hotkeys
-#
 
+# Volume down
+# Volume down
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Volume up
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Mute toggle
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+######################################
+########## bspwm hotkeys #############
+######################################
 # kill app
-super + alt + Delete
+super + mod1 + Delete
 	bspc node -k
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + mod1 + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -63,10 +73,6 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -127,13 +133,15 @@ super + ctrl + shift + space
 # move/resize
 #
 
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + mod1 + {h,j,k,l}
+    bspc node -z {left -20 0,down 0 20,up 0 -20,right 20 0}
+
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + shift + mod1 + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+
 
 # move a floating window
 super + {Left,Down,Up,Right}

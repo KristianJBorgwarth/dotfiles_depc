@@ -45,7 +45,7 @@ sleep 0.1
 
 
 # Set wallpaper
-feh --no-fehbg --bg-fill ~/Pictures/black.moon.jpg ~/Pictures/black.png
+feh --no-fehbg --bg-fill ~/Pictures/forrest.jpg
 
 
 # Launch notifications
