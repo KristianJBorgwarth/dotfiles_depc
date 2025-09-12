@@ -10,7 +10,8 @@ xrandr --output HDMI-1 --mode 1920x1080 --rotate right --pos 0x0 \
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d 1 2 3 4 5
+bspc monitor DP-2 -d 2 3 4  
+bspc monitor HDMI-1 -d 1
 
 bspc config border_width         1
 bspc config window_gap           6
