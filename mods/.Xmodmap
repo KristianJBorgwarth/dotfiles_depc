@@ -1,0 +1,3 @@
+remove lock = Caps_Lock
+keycode 66 = ISO_Level3_Shift
+add Mod5 = ISO_Level3_Shift

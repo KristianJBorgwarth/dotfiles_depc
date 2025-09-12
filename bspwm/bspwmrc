@@ -7,6 +7,12 @@
 xrandr --output HDMI-1 --mode 1920x1080 --rotate right --pos 0x0 \
        --output DP-2 --primary --mode 2560x1440 --rotate normal --pos 1080x0
 
+### Keyboard Remapping
+
+# To enable third-level character access on a 65% Danish keyboard, I remap `Caps Lock` to `ISO_Level3_Shift`
+# This is configured in `dotfiles/mods/.Xmodmap`
+setxkbmap -layout dk -option &
+sleep 1 && xmodmap ~/dotfiles/mods/.Xmodmap &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
