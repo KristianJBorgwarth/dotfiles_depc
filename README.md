@@ -8,6 +8,7 @@ These are my personal configuration files for a minimal Linux desktop setup. The
 - **sxhkd/**: Hotkey daemon configuration (`sxhkdrc`)
 - **polybar/**: Status bar configuration (`config.ini`, `launch.sh`)
 - **ghostty/**: Terminal emulator configuration (`config`, `themes/`)
+- **zsh/**: Zsh shell configuration (`zshrc`)
 - **omp/**: Oh My Posh prompt themes
 - **mods/**: Miscellaneous scripts or modules
 - **picom/**: Compositor configuration (`picom.conf`)
@@ -28,6 +29,7 @@ These are my personal configuration files for a minimal Linux desktop setup. The
    - sxhkd
    - polybar
    - ghostty
+   - zsh
    - oh-my-posh (for prompt themes)
    - picom (for compositor effects)
    - rofi (for application launcher)

@@ -1,0 +1,36 @@
+
+# autocomplete
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+autoload -Uz compinit
+compinit
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+bindkey '^I' autosuggest-accept
+bindkey '^F' complete-word
+
+# theme (oh my posh)
+export PATH=$PATH:$HOME/.local/bin
+eval "$(oh-my-posh init zsh --config ~/dotfiles/omp/material.omp.json)"
+
+
+# utilities
+eval "$(zoxide init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
+#commands
+alias zhd='nano ~/.zshrc'
+alias zhr='source ~/.zshrc'
+alias zhc='code ~/.zshrc'
+alias ls='ls --color=auto'
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
