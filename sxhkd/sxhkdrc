@@ -14,6 +14,18 @@ super + b
 super + r
 	rider
 
+# datagrip launcher
+super + d
+	datagrip
+
+# k9s launcher
+super + k
+	ghostty -e /home/linuxbrew/.linuxbrew/bin/k9s
+
+# open file manager
+super + shift f
+	thunar
+
 # restart bspwm
 super + shift + b
 	bspc wm -r
