@@ -44,7 +44,7 @@ sleep 0.2
 
 
 # Set wallpaper
-feh --no-fehbg --bg-fill ~/Pictures/forrest.jpg
+feh --no-fehbg --bg-fill ~/dotfiles/cosmetics/wallpapers/forrest.jpg
 
 
 # Launch notifications
