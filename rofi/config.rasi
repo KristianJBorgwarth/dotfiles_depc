@@ -1,0 +1,9 @@
+configuration {
+    font: "JetBrainsMono-Regular.ttf 12";
+    show-icons: true;
+    location: 0;
+    fullscreen: false;
+    width: 30;
+    lines: 10;
+    padding: 20;
+}
