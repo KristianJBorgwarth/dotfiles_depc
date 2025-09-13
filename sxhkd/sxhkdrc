@@ -14,8 +14,13 @@ super + b
 super + r
 	rider
 
+# restart bspwm
 super + shift + b
-	bspc wm -r # restart bspwm
+	bspc wm -r
+
+# open dotfiles in code
+super + e
+	code ~/dotfiles
 
 # make sxhkd reload its configuration files:
 super + Escape
