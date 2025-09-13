@@ -7,3 +7,4 @@ configuration {
     lines: 10;
     padding: 20;
 }
+@theme "/home/kristian/.local/share/rofi/themes/nord.pink.rasi"
