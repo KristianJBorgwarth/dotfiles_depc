@@ -2,10 +2,11 @@
 
 window-width = 140
 window-height = 40
-background-opacity = 0.75
+background-opacity = 0.50
+window-decoration = none
 
 keybind = ctrl+super+right=goto_split:right
 keybind = ctrl+super+left=goto_split:left
 keybind = alt+r=reload_config
 
-theme = dracula
+theme = /home/kristian/dotfiles/ghostty/themes/dracula
