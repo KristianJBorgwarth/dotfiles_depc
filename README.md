@@ -14,9 +14,11 @@ These are my personal configuration files for a minimal Linux desktop setup. The
 ## Usage
 
 1. Clone this repository:
+
    ```sh2
    git clone https://github.com/KristianJBorgwarth/dotfiles.git
    ```
+
 2. Copy or symlink the configs to your home directory as needed.
 3. Install the required software:
    - bspwm
