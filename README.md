@@ -1,6 +1,6 @@
 # Dotfiles
 
-These are my personal configuration files for a minimal Linux desktop setup. They include settings for window management, terminal, status bar, and more.
+These are my personal configuration files for a minimal Linux desktop setup. They include settings for window management, terminal, status bar, compositor, and more.
 
 ## Included Configurations
 
@@ -10,12 +10,15 @@ These are my personal configuration files for a minimal Linux desktop setup. The
 - **ghostty/**: Terminal emulator configuration (`config`, `themes/`)
 - **omp/**: Oh My Posh prompt themes
 - **mods/**: Miscellaneous scripts or modules
+- **picom/**: Compositor configuration (`picom.conf`)
+- **rofi/**: Application launcher configuration (`config.rasi`)
+- **cosmetics/**: Fonts and wallpapers
 
 ## Usage
 
 1. Clone this repository:
 
-   ```sh2
+   ```sh
    git clone https://github.com/KristianJBorgwarth/dotfiles.git
    ```
 
@@ -26,6 +29,8 @@ These are my personal configuration files for a minimal Linux desktop setup. The
    - polybar
    - ghostty
    - oh-my-posh (for prompt themes)
+   - picom (for compositor effects)
+   - rofi (for application launcher)
 4. Restart your session or reload the configs.
 
 ## Customization
