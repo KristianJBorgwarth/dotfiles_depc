@@ -12,14 +12,14 @@ super + b
 
 # rider launcher
 super + r
-	rider
+	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider >/dev/null 2>&1 &
 
 # datagrip launcher
 super + d
-	datagrip
+	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid datagrip >/dev/null 2>&1 &
 
 # k9s launcher
-super + k
+super + alt + k
 	ghostty -e /home/linuxbrew/.linuxbrew/bin/k9s
 
 # open file manager
@@ -99,13 +99,13 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus desktop 1–5
-super + {1-5}
-    bspc desktop -f ^{1-5}
-
-# move focused window to desktop 1–5
-super + shift + {1-5}
-    bspc node -d ^{1-5}
+# focus desktop 1–9
+super + {1-9}
+    bspc desktop -f ^{1-9}
+9
+# move focused window to desktop 1–9
+super + shift + {1-9}
+    bspc node -d ^{1-9}
 
 
 # focus the next/previous desktop in the current monitor
