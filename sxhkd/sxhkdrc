@@ -12,11 +12,11 @@ super + b
 
 # rider launcher
 super + r
-	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider >/dev/null 2>&1 &
+	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider
 
 # datagrip launcher
 super + d
-	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid datagrip >/dev/null 2>&1 &
+	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid datagrip
 
 # k9s launcher
 super + alt + k
