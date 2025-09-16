@@ -1,15 +1,21 @@
 
+# Uncomment the following line to enable zsh profiling
+# zmodload zsh/zprof
+
 # autocomplete
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
 autoload -Uz compinit
-compinit
+compinit -C
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
+# ANSI color index
+
+
 
 bindkey '^I' autosuggest-accept
 bindkey '^F' complete-word
@@ -30,7 +36,13 @@ alias zhr='source ~/.zshrc'
 alias zhc='code ~/.zshrc'
 alias ls='ls --color=auto'
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# fnm
+FNM_PATH="/home/kristian/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# Uncomment the following line to enable profiling
+# zprof

@@ -41,7 +41,7 @@
             "fetch_upstream_icon": true
           },
           "template": "<#5FAAE8>(</>{{ .HEAD }}<#5FAAE8>)</>",
-          "foreground": "#c73ecc",
+          "foreground": "#00cc74",
           "type": "git",
           "style": "plain"
         },
