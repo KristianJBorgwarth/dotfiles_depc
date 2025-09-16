@@ -1,5 +1,5 @@
 
-# Uncomment the following line to enable zsh profiling
+# Uncomment to enable zsh profiling
 # zmodload zsh/zprof
 
 # autocomplete
@@ -13,9 +13,6 @@ compinit -C
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
-# ANSI color index
-
-
 
 bindkey '^I' autosuggest-accept
 bindkey '^F' complete-word
@@ -44,5 +41,5 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# Uncomment the following line to enable profiling
+# Uncomment to enable profiling
 # zprof
