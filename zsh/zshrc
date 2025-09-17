@@ -41,5 +41,8 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Uncomment to enable profiling
 # zprof
