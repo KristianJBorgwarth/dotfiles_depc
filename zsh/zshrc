@@ -1,48 +1,74 @@
+# =========================
+#  Zsh config 
+# =========================
 
-# Uncomment to enable zsh profiling
-# zmodload zsh/zprof
+# Enable profiling only when requested:
+# run: PROFPATH=1 zsh -i -c exit
+[[ -n $PROFPATH ]] && zmodload zsh/zprof
 
-# autocomplete
-HISTFILE=~/.zsh_history
+# -------- History --------
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-autoload -Uz compinit
-compinit -C
+autoload -Uz compinit add-zsh-hook
+zmodload zsh/complist
+typeset -g _ZCOMP_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+typeset -g _ZCOMP_DUMP="$_ZCOMP_CACHE/zcompdump-$ZSH_VERSION"
+mkdir -p "$_ZCOMP_CACHE"
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$_ZCOMP_CACHE"
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+_compinit_after_prompt() {
+  add-zsh-hook -d precmd _compinit_after_prompt
+  if [[ ! -f "$_ZCOMP_DUMP" || ~/.zshrc -nt "$_ZCOMP_DUMP" ]]; then
+    compinit -d "$_ZCOMP_DUMP"
+    [[ -f "$_ZCOMP_DUMP" ]] && zcompile "$_ZCOMP_DUMP" 2>/dev/null
+  else
+    compinit -C -d "$_ZCOMP_DUMP"
+  fi
+}
+add-zsh-hook precmd _compinit_after_prompt
 
+
+# zsh-autosuggestions
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
 
+# Keybindings
 bindkey '^I' autosuggest-accept
 bindkey '^F' complete-word
 
-# theme (oh my posh)
-export PATH=$PATH:$HOME/.local/bin
-eval "$(oh-my-posh init zsh --config ~/dotfiles/omp/material.omp.json)"
+# Local bin
+export PATH="$PATH:$HOME/.local/bin"
 
+# Neovim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
-# utilities
+# oh-my-posh
+export OMP_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-posh"
+eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/omp/material.omp.json")"
+
+# zoxide
 eval "$(zoxide init zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Homebrew
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
-#commands
+# fnm (Fast Node Manager)
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env)"
+fi
+
+# -------- Aliases --------
 alias zhd='nano ~/.zshrc'
 alias zhr='source ~/.zshrc'
 alias zhc='code ~/.zshrc'
 alias ls='ls --color=auto'
 
-
-# fnm
-FNM_PATH="/home/kristian/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
-# nvim
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
-# Uncomment to enable profiling
-# zprof
+# Print profiling report only when enabled
+[[ -n $PROFPATH ]] && zprof
