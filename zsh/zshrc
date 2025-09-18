@@ -1,37 +1,16 @@
-# =========================
-#  Zsh config 
+# ========================= 
+# Zsh config 
 # =========================
 
-# Enable profiling only when requested:
-# run: PROFPATH=1 zsh -i -c exit
+# Enable profiling only when requested: # run: PROFPATH=1 zsh -i -c exit 
 [[ -n $PROFPATH ]] && zmodload zsh/zprof
 
-# -------- History --------
+# History
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-autoload -Uz compinit add-zsh-hook
-zmodload zsh/complist
-typeset -g _ZCOMP_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-typeset -g _ZCOMP_DUMP="$_ZCOMP_CACHE/zcompdump-$ZSH_VERSION"
-mkdir -p "$_ZCOMP_CACHE"
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$_ZCOMP_CACHE"
-
-_compinit_after_prompt() {
-  add-zsh-hook -d precmd _compinit_after_prompt
-  if [[ ! -f "$_ZCOMP_DUMP" || ~/.zshrc -nt "$_ZCOMP_DUMP" ]]; then
-    compinit -d "$_ZCOMP_DUMP"
-    [[ -f "$_ZCOMP_DUMP" ]] && zcompile "$_ZCOMP_DUMP" 2>/dev/null
-  else
-    compinit -C -d "$_ZCOMP_DUMP"
-  fi
-}
-add-zsh-hook precmd _compinit_after_prompt
-
-
-# zsh-autosuggestions
+# zsh-autosuggestions (no compinit needed)
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
 
@@ -39,10 +18,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
 bindkey '^I' autosuggest-accept
 bindkey '^F' complete-word
 
-# Local bin
+# PATH
 export PATH="$PATH:$HOME/.local/bin"
-
-# Neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # oh-my-posh
@@ -64,11 +41,12 @@ if [ -d "$FNM_PATH" ]; then
   eval "$(fnm env)"
 fi
 
-# -------- Aliases --------
+# Aliases
 alias zhd='nano ~/.zshrc'
 alias zhr='source ~/.zshrc'
 alias zhc='code ~/.zshrc'
 alias ls='ls --color=auto'
+alias zhp='zsh -i -c "PROFPATH=1 zsh -i -c exit"'
 
-# Print profiling report only when enabled
+# Print profiling report only when enabled 
 [[ -n $PROFPATH ]] && zprof
