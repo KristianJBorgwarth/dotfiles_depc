@@ -37,8 +37,7 @@ These are my personal configuration files for a minimal Linux desktop setup. The
 
 ## Customization
 
-Feel free to edit any config file to match your preferences. Each directory contains a README or comments for further guidance.
-
+Feel free to edit any config file to match your preferences.
 ---
 
 > Maintained by KristianJBorgwarth
