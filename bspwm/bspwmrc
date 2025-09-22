@@ -21,7 +21,7 @@ bspc monitor HDMI-1 -d 1
 
 
 # Border colors
-bspc config border_width         1
+bspc config border_width         0
 bspc config normal_border_color "#222222"
 bspc config active_border_color "#444444"
 bspc config focused_border_color "#71b3ff"
@@ -44,7 +44,7 @@ sleep 0.2
 
 
 # Set wallpaper
-feh --no-fehbg --bg-fill ~/dotfiles/cosmetics/wallpapers/forrest.jpg
+feh --no-fehbg --bg-fill ~/dotfiles/cosmetics/wallpapers/foggy-woods.jpg
 
 
 # Launch notifications

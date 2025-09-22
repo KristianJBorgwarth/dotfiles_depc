@@ -4,6 +4,8 @@ window-width = 140
 window-height = 40
 background-opacity = 0.60
 window-decoration = none
+window-padding-x = 1
+window-padding-y = 0
 
 keybind = ctrl+super+right=goto_split:right
 keybind = ctrl+super+left=goto_split:left

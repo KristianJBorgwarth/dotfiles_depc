@@ -33,6 +33,7 @@ These are my personal configuration files for a minimal Linux desktop setup. The
    - oh-my-posh (for prompt themes)
    - picom (for compositor effects)
    - rofi (for application launcher)
+   - nvim (optional, but some shortcuts use nvim; you can change those to use nano, micro or code, if you want)
 4. Restart your session or reload the configs.
 
 ## Customization

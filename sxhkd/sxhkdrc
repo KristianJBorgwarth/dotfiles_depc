@@ -30,9 +30,9 @@ super + shift f
 super + shift + b
 	bspc wm -r
 
-# open dotfiles in code
+# open dotfiles in nvim
 super + e
-	code ~/dotfiles
+    ghostty -e /opt/nvim-linux-x86_64/bin/nvim ~/dotfiles
 
 # make sxhkd reload its configuration files:
 super + Escape
