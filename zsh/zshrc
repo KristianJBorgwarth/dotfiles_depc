@@ -42,7 +42,7 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 # Aliases
-alias zhd='nano ~/.zshrc'
+alias zhd='nvim ~/.zshrc'
 alias zhr='source ~/.zshrc'
 alias zhc='code ~/.zshrc'
 alias ls='ls --color=auto'
