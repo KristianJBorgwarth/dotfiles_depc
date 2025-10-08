@@ -1,0 +1,56 @@
+[global]
+    # Placement/size (replaces deprecated `geometry`)
+    origin = top-right
+    width = 300
+    height = 50
+    offset = 20x40
+
+    # Look & feel
+    transparency = 15
+    corner_radius = 8
+    frame_width = 2
+    frame_color = "#FFFFFF"        # white border
+    separator_color = frame
+    padding = 8
+    horizontal_padding = 10
+    line_height = 0
+    separator_height = 2
+    font = JetBrainsMono Nerd Font 10
+    icon_position = left
+    enable_recursive_icon_lookup = true
+    shrink = false
+    word_wrap = yes
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_age_threshold = 60
+    ignore_newline = no
+    indicate_hidden = yes
+    markup = full
+    alignment = left
+    vertical_alignment = center
+    ellipsize = middle
+    idle_threshold = 120
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+
+# Monochrome urgencies
+[urgency_low]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#444444"        # subtle gray border
+    timeout = 4
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#888888"        # medium gray border
+    timeout = 6
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#FFFFFF"        # bright white border
+    timeout = 10
+
+
