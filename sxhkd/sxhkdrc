@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-	ghostty
+	alacritty
 
 # program launcher
 super + space
@@ -20,7 +20,7 @@ super + d
 
 # k9s launcher
 super + alt + k
-	ghostty -e /home/linuxbrew/.linuxbrew/bin/k9s
+	alacritty -e /home/linuxbrew/.linuxbrew/bin/k9s
 
 # open file manager
 super + shift f
@@ -32,7 +32,7 @@ super + shift + b
 
 # open dotfiles in nvim
 super + e
-    ghostty -e /opt/nvim-linux-x86_64/bin/nvim ~/dotfiles
+   alacritty -e /opt/nvim-linux-x86_64/bin/nvim ~/dotfiles
 
 # make sxhkd reload its configuration files:
 super + Escape
