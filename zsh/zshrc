@@ -47,6 +47,6 @@ alias zhr='source ~/.zshrc'
 alias zhc='code ~/.zshrc'
 alias ls='ls --color=auto'
 alias zhp='zsh -i -c "PROFPATH=1 zsh -i -c exit"'
-
+alias dr='dunstctl reload 2>/dev/null || { pkill -x dunst; dunst --config "$HOME/.config/dunst/dunstrc" --fork --replace & }'
 # Print profiling report only when enabled 
 [[ -n $PROFPATH ]] && zprof
