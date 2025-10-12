@@ -4,8 +4,8 @@
 # Monitor layout
 #-----------------------
 # DP-2 horizontal, primary
-xrandr --output HDMI-1 --mode 1920x1080 --rotate right --pos 0x0 \
-       --output DP-2 --primary --mode 2560x1440 --rotate normal --pos 1080x0
+xrandr --output HDMI-1 --mode 1920x1080 --rate 165 --rotate right --pos 0x0 \
+       --output DP-2 --primary --mode 2560x1440 --rate 70 --rotate normal --pos 1080x0
 
 ### Keyboard Remapping
 
@@ -21,7 +21,7 @@ bspc monitor HDMI-1 -d 1
 
 
 # Border colors
-bspc config border_width         0
+bspc config border_width         2
 bspc config normal_border_color "#222222"
 bspc config active_border_color "#444444"
 bspc config focused_border_color "#71b3ff"
