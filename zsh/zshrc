@@ -2,6 +2,9 @@
 # Zsh config 
 # =========================
 
+# Increase file watch limit
+ulimit -n 65535
+
 # Enable profiling only when requested: # run: PROFPATH=1 zsh -i -c exit 
 [[ -n $PROFPATH ]] && zmodload zsh/zprof
 
