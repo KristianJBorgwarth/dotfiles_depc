@@ -39,10 +39,8 @@ picom &
 sleep 0.2
 ~/.config/polybar/launch.sh &
 
-
 # Set wallpaper
 feh --no-fehbg --bg-fill ~/dotfiles/cosmetics/wallpapers/foggy-woods.jpg
-
 
 # Launch notifications
 dunst &

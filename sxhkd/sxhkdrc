@@ -8,7 +8,7 @@ super + space
 
 # brave launch
 super + b
-	brave-browser
+	/usr/bin/brave-browser
 
 # rider launcher
 super + r
