@@ -1,8 +1,6 @@
 #! /bin/sh
 
-#------------------------
 # Monitor layout
-#-----------------------
 if command -v autorandr >/dev/null 2>&1; then
   PYTHONWARNINGS=ignore::SyntaxWarning autorandr --change --default default
 else
@@ -11,10 +9,7 @@ else
   [ -n "$FIRST" ] && xrandr --output "$FIRST" --auto --primary
 fi
 
-### Keyboard Remapping
-
-# To enable third-level character access on a 65% Danish keyboard, I remap `Caps Lock` to `ISO_Level3_Shift`
-# This is configured in `dotfiles/mods/.Xmodmap`
+# Keyboard Remapping
 setxkbmap -layout dk -option &
 sleep 1 && xmodmap ~/dotfiles/mods/.Xmodmap &
 
@@ -23,7 +18,6 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor DP-2 -d 2 3 4 5 6 7 8 9  
 bspc monitor HDMI-1 -d 1
 
-
 # Border colors
 bspc config border_width         2
 bspc config normal_border_color "#222222"
@@ -31,8 +25,7 @@ bspc config active_border_color "#444444"
 bspc config focused_border_color "#71b3ff"
 bspc config presel_feedback_color "#3a9bdc"
 
-
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
