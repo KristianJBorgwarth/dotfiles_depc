@@ -3,9 +3,13 @@
 #------------------------
 # Monitor layout
 #-----------------------
-# DP-2 horizontal, primary
-xrandr --output HDMI-1 --mode 1920x1080 --rate 165 --rotate right --pos 0x0 \
-       --output DP-2 --primary --mode 2560x1440 --rate 70 --rotate normal --pos 1080x0
+if command -v autorandr >/dev/null 2>&1; then
+  PYTHONWARNINGS=ignore::SyntaxWarning autorandr --change --default default
+else
+  # Fallback: pick first connected output so you always get a screen
+  FIRST="$(xrandr --query | awk '/ connected/{print $1; exit}')"
+  [ -n "$FIRST" ] && xrandr --output "$FIRST" --auto --primary
+fi
 
 ### Keyboard Remapping
 
