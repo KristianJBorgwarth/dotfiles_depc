@@ -1,8 +1,11 @@
 #! /bin/sh
 
+BASE="$HOME/dotfiles/bspwm"
+export PYTHONWARNINGS=ignore::SyntaxWarning
+
 # Monitor layout
 if command -v autorandr >/dev/null 2>&1; then
-  PYTHONWARNINGS=ignore::SyntaxWarning autorandr --change --default default
+   autorandr --change --default default
 else
   # Fallback: pick first connected output so you always get a screen
   FIRST="$(xrandr --query | awk '/ connected/{print $1; exit}')"
@@ -35,12 +38,8 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-picom &
-sleep 0.2
-~/.config/polybar/launch.sh &
-
-# Set wallpaper
-feh --no-fehbg --bg-fill ~/dotfiles/cosmetics/wallpapers/foggy-woods.jpg
-
-# Launch notifications
-dunst &
+if [-x "$BASE/session/startup.sh" ]; then
+    sh "$BASE/session/startup.sh" 
+  else 
+    printf "No startup script found at %s/session/startup.sh\n" "$BASE"
+fi
