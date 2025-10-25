@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE="$HOME/dotfiles/bspwm"
+BASE="$HOME/dotfiles/bspwm/scripts"
 export PYTHONWARNINGS=ignore::SyntaxWarning
 
 # monitor layout
