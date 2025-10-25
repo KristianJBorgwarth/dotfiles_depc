@@ -6,10 +6,16 @@ DOTFILES="${DOTFILES:-$HOME/dotfiles}"
 if command -v picom >/dev/null 2>&1; then
   pgrep -x picom >/dev/null || picom &
 fi
+
 sleep 0.15
 
+WALL="$DOTFILES/cosmetics/wallpapers/foggy-woods.jpg"
 if command -v feh >/dev/null 2>&1; then
-  feh --no-fehbg --bg-fill "$DOTFILES/cosmetics/wallpapers/foggy-woods.jpg"
+  if [ -f "$WALL" ]; then
+    feh --no-fehbg --bg-fill "$WALL" || :
+  else
+    printf 'WARN: wallpaper not found: %s\n' "$WALL"
+  fi
 fi
 
 if [ -x "$HOME/.config/polybar/launch.sh" ]; then
