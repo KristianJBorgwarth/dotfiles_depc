@@ -14,6 +14,10 @@ super + b
 super + r
 	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider
 
+# screencapture to clipboard, then refocus the window under the cursor
+super + shift + s
+    flameshot gui -c; sleep 0.1; bspc node -f pointed || bspc node -f last
+
 # datagrip launcher
 super + d
 	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid datagrip
