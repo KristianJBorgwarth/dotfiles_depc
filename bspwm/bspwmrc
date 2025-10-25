@@ -3,13 +3,11 @@
 BASE="$HOME/dotfiles/bspwm"
 export PYTHONWARNINGS=ignore::SyntaxWarning
 
-# Monitor layout
-if command -v autorandr >/dev/null 2>&1; then
-   autorandr --change --default default
+# monitor layout
+if [ -x "$BASE/display-apply.sh" ]; then
+  sh "$BASE/display-apply.sh"
 else
-  # Fallback: pick first connected output so you always get a screen
-  FIRST="$(xrandr --query | awk '/ connected/{print $1; exit}')"
-  [ -n "$FIRST" ] && xrandr --output "$FIRST" --auto --primary
+  printf "No display script found at %s/display-apply.sh\n" "$BASE"
 fi
 
 # Keyboard Remapping
@@ -21,7 +19,7 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor DP-2   -d 2 3 4 5 6 7 8 9
 bspc monitor HDMI-1 -d 1
 
-# apply bspwm style
+# bspwm styles 
 if [ -x "$BASE/styling-apply.sh" ]; then
   sh "$BASE/styling-apply.sh"
 else
