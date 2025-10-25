@@ -16,10 +16,10 @@ sleep 1 && xmodmap "$HOME/dotfiles/mods/.Xmodmap" &
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 
-if [ -x "$BASE/workspace-apply.sh" ]; then
-  sh "$BASE/workspace-apply.sh"
+if [ -x "$BASE/workspaces-apply.sh" ]; then
+  sh "$BASE/workspaces-apply.sh"
 else
-  printf "No workspace script found at %s/workspace-apply.sh\n" "$BASE"
+printf "No workspace script found at %s/workspaces-apply.sh\n" "$BASE"
 fi
 
 # bspwm styles 
