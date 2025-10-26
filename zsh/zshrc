@@ -13,9 +13,10 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-# zsh-autosuggestions (no compinit needed)
+# zsh-autosuggestions 
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#56B6C2'
+zstyle ':completion:*' menu no
 
 # Keybindings
 bindkey '^I' autosuggest-accept
