@@ -1,6 +1,7 @@
 #!/bin/sh
 
 BASE="$HOME/dotfiles/bspwm/scripts"
+BASE_LOCAL="$HOME/dotfiles/bspwm/local"
 export PYTHONWARNINGS=ignore::SyntaxWarning
 
 # monitor layout
@@ -15,6 +16,7 @@ setxkbmap -layout dk -option &
 sleep 1 && xmodmap "$HOME/dotfiles/mods/.Xmodmap" &
 
 pgrep -x sxhkd >/dev/null || sxhkd &
+
 
 if [ -x "$BASE/workspaces-apply.sh" ]; then
   sh "$BASE/workspaces-apply.sh"
@@ -36,3 +38,11 @@ else
   printf "No startup script found at %s/start-apps.sh\n" "$BASE"
 fi
 
+# local
+if [ -x "$BASE_LOCAL/local-apply.sh" ]; then
+  sh "$BASE_LOCAL/local-apply.sh"
+else
+    printf "No startup script found at %s/local-apply.sh\n" "$BASE_LOCAL"
+fi
+
+ 
