@@ -8,4 +8,5 @@ configuration {
     padding: 20;
     monitor: 1;
 }
-@theme "/home/kristian/.local/share/rofi/themes/nord.pink.rasi"
+
+@theme "~/dotfiles/rofi/themes/nord.pink.rasi"
