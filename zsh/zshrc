@@ -30,9 +30,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export OMP_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-posh"
 eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/omp/material.omp.json")"
 
-# vi mode for zsh
-set -o vi
-
 # zoxide
 eval "$(zoxide init zsh)"
 
