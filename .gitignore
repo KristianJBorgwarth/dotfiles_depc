@@ -1,3 +1,4 @@
 bspwm/profiles/*
 !bspwm/profiles/README.md
 bspwm/local/*
+alac/local.toml
