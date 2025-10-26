@@ -1,3 +1,5 @@
+# OUTDATED DOCS!
+---
 # Dotfiles
 
 These are my personal configuration files for a minimal Linux desktop setup. They include settings for window management, terminal, status bar, compositor, and more.
