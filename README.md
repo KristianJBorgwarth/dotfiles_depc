@@ -1,4 +1,4 @@
-# OUTDATED DOCS!
+# Incorrect and unfinished README instructions. will update
 ---
 # Dotfiles
 
