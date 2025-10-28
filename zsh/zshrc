@@ -55,3 +55,5 @@ alias dr='dunstctl reload 2>/dev/null || { pkill -x dunst; dunst --config "$HOME
 alias autorandr='PYTHONWARNINGS=ignore::SyntaxWarning /bin/autorandr'
 # Print profiling report only when enabled 
 [[ -n $PROFPATH ]] && zprof
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
