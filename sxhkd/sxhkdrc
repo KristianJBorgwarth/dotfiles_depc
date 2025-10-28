@@ -10,6 +10,9 @@ super + space
 super + b
 	/usr/bin/brave-browser
 
+super + 0
+  i3lock -c 000000
+
 # rider launcher
 super + r
 	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider
@@ -98,8 +101,6 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focupc desktop -f ^{1-9}
-9
 # move focused window to desktop 1–9
 super + shift + {1-9}
     bspc node -d ^{1-9}
