@@ -34,10 +34,6 @@ super + shift f
 super + shift + b
 	bspc wm -r
 
-# lock screen
-super + 0
-    i3lock -c 000000
-
 # open dotfiles in nvim
 super + e
    alacritty -e /opt/nvim-linux-x86_64/bin/nvim ~/dotfiles
