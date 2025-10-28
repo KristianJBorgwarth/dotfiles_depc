@@ -10,7 +10,7 @@ super + space
 super + b
 	/usr/bin/brave-browser
 
-super + 0
+ctrl + l
   i3lock -c 000000
 
 # rider launcher
