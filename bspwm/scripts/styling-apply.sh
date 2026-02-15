@@ -4,8 +4,8 @@ set -eu
 bspc config border_width              2
 bspc config normal_border_color       "#222222"
 bspc config active_border_color       "#444444"
-bspc config focused_border_color      "#71b3ff"
-bspc config presel_feedback_color     "#3a9bdc"
+bspc config focused_border_color      "#bd93f9"
+bspc config window_gap 5
 
 bspc config split_ratio               0.50
 bspc config borderless_monocle        true

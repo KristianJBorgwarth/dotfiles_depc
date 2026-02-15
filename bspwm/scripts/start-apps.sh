@@ -9,7 +9,7 @@ fi
 
 sleep 0.15
 
-WALL="$DOTFILES/cosmetics/wallpapers/foggy-woods.jpg"
+WALL="$DOTFILES/cosmetics/wallpapers/cm-purple.jpg"
 if command -v feh >/dev/null 2>&1; then
   if [ -f "$WALL" ]; then
     feh --no-fehbg --bg-fill "$WALL" || :
