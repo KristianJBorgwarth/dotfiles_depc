@@ -4,7 +4,11 @@ super + Return
 
 # program launcher
 super + space
-    rofi -m -show drun
+    rofi -show drun
+
+# window tabs
+super + Tab
+    rofi -show window
 
 # brave launch
 super + b
@@ -13,33 +17,17 @@ super + b
 ctrl + L
   i3lock -c 000000
 
-# rider launcher
-super + r
-	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid rider
-
 # screencapture to clipboard, then refocus the window under the cursor
 super + shift + s
     flameshot gui -c; sleep 0.1; bspc node -f pointed || bspc node -f last
 
-# datagrip launcher
-super + d
-	env XCURSOR_SIZE=16 XCURSOR_THEME=Adwaita setsid datagrip
-
-# k9s launcher
-super + alt + k
-	alacritty -e /home/linuxbrew/.linuxbrew/bin/k9s
-
 # open file manager
-super + shift f
-	thunar
+super + e 
+	 alacritty -e spf
 
 # restart bspwm
 super + shift + b
 	bspc wm -r
-
-# open dotfiles in nvim
-super + e
-   alacritty -e /opt/nvim-linux-x86_64/bin/nvim ~/dotfiles
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -111,7 +99,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+super + {grave}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -158,13 +146,14 @@ super + shift + mod1 + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}s the node for the given path jump
+
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus desktop 1–9
 super + {1-9}
     bspc desktop -f ^{1-9}
-9
+
 # move focused window to desktop 1–9
 super + shift + {1-9}
     bspc node -d ^{1-9}
@@ -175,7 +164,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+super + {grave}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
