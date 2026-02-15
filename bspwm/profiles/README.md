@@ -20,7 +20,7 @@ own layouts without polluting the shared dotfiles repository.
    ```
 
 3. This script uses `autorandr --current` to get the name of the active display profile.
-   ```autodnr --current
+   ```autodrandr --current
 
    ```
 4. If a matching file exists in this folder (for example desktop.sh for the profile desktop), it will be sourced and executed.

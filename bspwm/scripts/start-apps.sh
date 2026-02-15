@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -eu
-DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/private_projects/dotfiles_depc}"
 
 if command -v picom >/dev/null 2>&1; then
   pgrep -x picom >/dev/null || picom &

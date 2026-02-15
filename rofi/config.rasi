@@ -9,4 +9,4 @@ configuration {
     monitor: 1;
 }
 
-@theme "~/dotfiles/rofi/themes/nord.pink.rasi"
+@theme "~/private_projects/dotfiles_depc/rofi/themes/nord.pink.rasi"

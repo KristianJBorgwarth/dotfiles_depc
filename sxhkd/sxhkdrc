@@ -4,7 +4,7 @@ super + Return
 
 # program launcher
 super + space
-    rofi -m primary -show drun
+    rofi -m -show drun
 
 # brave launch
 super + b
