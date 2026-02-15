@@ -13,7 +13,7 @@ fi
 
 # Keyboard Remapping
 setxkbmap -layout dk -option &
-sleep 1 && xmodmap "$HOME/dotfiles/mods/.Xmodmap" &
+sleep 1 && xmodmap "$HOME/private_projects/dotfiles_depc/mods/.Xmodmap" &
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 
