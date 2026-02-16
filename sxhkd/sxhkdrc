@@ -4,7 +4,7 @@ super + Return
 
 # program launcher
 super + space
-    rofi -m -show drun
+    rofi -show drun
 
 # window tabs
 super + Tab
