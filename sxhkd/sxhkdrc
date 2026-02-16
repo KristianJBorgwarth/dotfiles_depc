@@ -4,11 +4,11 @@ super + Return
 
 # program launcher
 super + space
-    rofi -show drun
+    rofi -m -show drun
 
 # window tabs
 super + Tab
-    rofi -show window
+    rofi -m -show window
 
 # brave launch
 super + b

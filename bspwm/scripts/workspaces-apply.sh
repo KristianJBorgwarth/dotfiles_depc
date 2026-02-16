@@ -1,8 +1,23 @@
 #!/bin/sh
 set -eu
 
-DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/private_projects/dotfiles_depc}"
 PROFILES_DIR="$DOTFILES/bspwm/profiles"
+
+wipe_desktops() {
+  # Move everything to the first monitor, then remove.
+  # This avoids "can't remove last desktop" / weird distribution issues.
+  PRIMARY="$(bspc query -M | head -n1 || true)"
+  [ -n "${PRIMARY:-}" ] || return 0
+
+  for d in $(bspc query -D 2>/dev/null); do
+    bspc desktop "$d" -m "$PRIMARY" 2>/dev/null || true
+  done
+
+  for d in $(bspc query -D 2>/dev/null); do
+    bspc desktop "$d" -r 2>/dev/null || true
+  done
+}
 
 CUR_PROFILE=""
 if command -v autorandr >/dev/null 2>&1; then
@@ -10,10 +25,10 @@ if command -v autorandr >/dev/null 2>&1; then
 fi
 
 if [ -n "$CUR_PROFILE" ] && [ -r "$PROFILES_DIR/$CUR_PROFILE.sh" ]; then
+  wipe_desktops
   # shellcheck disable=SC1090
-  if . "$PROFILES_DIR/$CUR_PROFILE.sh"; then
-    exit 0
-  fi
+  . "$PROFILES_DIR/$CUR_PROFILE.sh"
+  exit 0
 fi
 
 # Generic fallback mapping based on number of monitors.
